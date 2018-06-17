@@ -1,4 +1,4 @@
-package javalesson.patterns.factory;
+package javalesson.patterns;
 
 public class FactoryLesson1 {
     public static void main(String[] args) {

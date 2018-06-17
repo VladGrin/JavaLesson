@@ -1,4 +1,4 @@
-package javalesson.patterns.factory;
+package javalesson.patterns;
 
 public class SingeltonLesson {
     public static void main(String[] args) {
