@@ -1,6 +1,6 @@
 package javalesson.solid;
 
-public class singleResponsibility {
+public class SingleResponsibility {
 }
 
 //class Employee{
