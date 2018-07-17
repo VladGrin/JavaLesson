@@ -1,5 +1,7 @@
 package javalesson.basic;
 
+import java.io.Serializable;
+
 public class InitializationEx {
     static int i = 10;
     int anInt = 20;
