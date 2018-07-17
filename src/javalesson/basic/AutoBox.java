@@ -9,9 +9,9 @@ public class AutoBox {
         Object o1 = new Object();
         Object o2 = new Object();
         System.out.println(o1==o2);
-        Integer a = 5;
-        Integer b = 5;
-        Integer c = new Integer("5");
+        Integer a = 127;
+        Integer b = 127;
+        Integer c = new Integer("127");
         System.out.println(a==b);
         System.out.println(a==c);
     }
