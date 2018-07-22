@@ -82,5 +82,9 @@ public class StreamCreate {
         // Создать параллельный стрим из коллекции
         Stream<String> parallelStream = collection.parallelStream();
         System.out.println("parallelStream = " + parallelStream.collect(Collectors.toList())); // напечатает parallelStream = [a1, a2, a3]
+
+        Arrays.asList(5, 6, 7, 8, 9, 5).parallelStream().filter(x -> x % 2 == 0)
+                .filter(x->x>7)
+                .forEach(x -> System.out.println(x));
     }
 }

@@ -1,4 +1,4 @@
-package javalesson.patterns;
+package javalesson.patterns.creational;
 
 public class BuilderLesson {
     public static void main(String[] args) {
