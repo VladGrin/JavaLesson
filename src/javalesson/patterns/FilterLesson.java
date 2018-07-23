@@ -5,43 +5,66 @@ import java.util.List;
 
 public class FilterLesson {
     public static void main(String[] args) {
-        Car car1 = new Car(150,"green",4);
-        Car car2 = new Car(200,"red",2);
-        Car car3 = new Car(250,"black",4);
+        Car car1 = new Car(150, "green", 4);
+        Car car2 = new Car(200, "red", 2);
+        Car car3 = new Car(250, "black", 4);
         List<Car> cars = new ArrayList<>();
         cars.add(car1);
         cars.add(car2);
         cars.add(car3);
-        cars = new SpeedFilter().filter(cars);
-        for(Car car : cars){
+        List<Car> cars1 = new SpeedFilter().filter(cars);
+        for (Car car : cars1) {
             System.out.println(car);
         }
+        List<Car> cars2 = new DoorsFilter().filter(cars);
+        for (Car car : cars2) {
+            System.out.println(car);
+        }
+
     }
 }
-interface CarFilter{
+
+interface CarFilter {
     List<Car> filter(List<Car> cars);
 }
-class SpeedFilter implements CarFilter{
 
+class DoorsFilter implements CarFilter {
     @Override
     public List<Car> filter(List<Car> cars) {
         List<Car> list = new ArrayList<>();
-        for(Car car : cars){
-            if (car.getMaxSpeed() > 180){
+        for (Car car : cars){
+            if(car.getDoors() > 2){
                 list.add(car);
             }
         }
         return list;
     }
 }
+
+class SpeedFilter implements CarFilter {
+    @Override
+    public List<Car> filter(List<Car> cars) {
+        List<Car> list = new ArrayList<>();
+        for (Car car : cars) {
+            if (car.getMaxSpeed() > 180) {
+                list.add(car);
+            }
+        }
+        return list;
+    }
+}
+
 class Car {
     private int maxSpeed;
     private String color;
     private int doors;
+
     public Car(int maxSpeed, String color, int doors) {
         this.maxSpeed = maxSpeed;
         this.color = color;
         this.doors = doors;
+    }
+    public Car() {
     }
 
     public int getMaxSpeed() {
