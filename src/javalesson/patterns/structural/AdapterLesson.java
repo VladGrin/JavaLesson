@@ -1,46 +1,43 @@
 package javalesson.patterns.structural;
 
-import java.util.Calendar;
-
 public class AdapterLesson {
     public static void main(String[] args) {
-        CarWash carWash = new CarWash();
-        carWash.washCar(new BMW());
-        carWash.washCar(new TrackWrap(new MAN()));
+        Animal dog = new Dog();
+        dog.doSomething(new ConcreatVisitor());
+        Animal cat = new Cat();
+        cat.doSomething(new ConcreatVisitor());
     }
 }
-class TrackWrap implements Car{
-    Track track;
-    public TrackWrap(Track track) {
-        this.track = track;
-    }
+interface Animal{
+    void doSomething(Visitor visitor);
+}
+class Dog implements Animal{
     @Override
-    public void wash() {
-        track.clean();
+    public void doSomething(Visitor visitor) {
+        visitor.doDog();
     }
 }
-interface Track{
-    void clean();
-}
-class MAN implements Track{
+class Cat implements Animal{
     @Override
-    public void clean() {
-        System.out.println("I am MAN. Clean me");
+    public void doSomething(Visitor visitor) {
+        visitor.doCat();
     }
 }
-interface Car{
-    void wash();
+interface Visitor{
+    void doDog();
+    void doCat();
 }
-class BMW implements Car{
+class ConcreatVisitor implements Visitor{
 
     @Override
-    public void wash() {
-        System.out.println("I am BMW. Brush me");
+    public void doDog() {
+        System.out.println("I am dog");
+        System.out.println("gav");
     }
-}
-class CarWash{
-    public void washCar(Car car){
-        System.out.println("Cars wash here");
-        car.wash();
+
+    @Override
+    public void doCat() {
+        System.out.println("I am cat");
+        System.out.println("miay");
     }
 }
