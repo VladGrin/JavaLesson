@@ -1,6 +1,6 @@
 package javalesson.patterns.structural;
 
-public class AdapterLesson {
+public class VisitorLesson {
     public static void main(String[] args) {
         Animal dog = new Dog();
         dog.doSomething(new ConcreatVisitor());
