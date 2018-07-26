@@ -2,10 +2,11 @@ package javalesson.patterns.creational;
 
 public class FactoryMethodLesson1 {
     public static void main(String[] args) {
-        DeveloperFactory developerFactory = createDeveloperBySpeciality("php");
-        Developer developer = developerFactory.createDeveloper();
+//        DeveloperFactory developerFactory = createDeveloperBySpeciality("php");
+//        Developer developer = developerFactory.createDeveloper();
+//        developer.writeCode();
 
-        developer.writeCode();
+        createDeveloperBySpeciality("php").createDeveloper().writeCode();
     }
     static DeveloperFactory createDeveloperBySpeciality(String speciality){
         switch (speciality){

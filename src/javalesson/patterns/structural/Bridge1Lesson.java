@@ -2,71 +2,60 @@ package javalesson.patterns.structural;
 
 public class Bridge1Lesson {
     public static void main(String[] args) {
-        Shape[] shape = {
-                new Rectangle(new Blue()),
-                new Square(new Red()),
-                new Circle(new Green())
+        Program[] programs = {
+                new BankSystem(new JavaDeveloper()),
+                new StockExchange(new CppDeveloper())
         };
-        for (Shape shape1: shape){
-            shape1.drawShape();
+
+        for (Program program : programs) {
+            program.developProgram();
         }
     }
 }
-abstract class Shape{
-    Color color;
-    public Shape(Color color) {
-        this.color = color;
+
+abstract class Program {
+    Developer developer;
+
+    public Program(Developer developer) {
+        this.developer = developer;
     }
-    abstract void drawShape();
+
+    public abstract void developProgram();
 }
-class Rectangle extends Shape{
-    public Rectangle(Color color) {
-        super(color);
+
+class BankSystem extends Program {
+    public BankSystem(Developer developer) {
+        super(developer);
     }
     @Override
-    void drawShape() {
-        System.out.println("draw RECTANGLE");
-        color.fillColor();
+    public void developProgram() {
+        System.out.println("Bank System development in progress...");
+        developer.writeCode();
     }
 }
-class Square extends Shape{
-    public Square(Color color) {
-        super(color);
+class StockExchange extends Program {
+    public StockExchange(Developer developer) {
+        super(developer);
     }
     @Override
-    void drawShape() {
-        System.out.println("draw SQUARE");
-        color.fillColor();
+    public void developProgram() {
+        System.out.println("Stock Exchange development in progress...");
+        developer.writeCode();
     }
 }
-class Circle extends Shape{
-    public Circle(Color color) {
-        super(color);
-    }
+
+interface Developer {
+    void writeCode();
+}
+class JavaDeveloper implements Developer {
     @Override
-    void drawShape() {
-        System.out.println("draw CIRCLE");
-        color.fillColor();
+    public void writeCode() {
+        System.out.println("java developer writes java code...");
     }
 }
-interface Color{
-    void fillColor();
-}
-class Red implements Color{
+class CppDeveloper implements Developer {
     @Override
-    public void fillColor() {
-        System.out.println("Fill RED COLOR");
-    }
-}
-class Green implements Color{
-    @Override
-    public void fillColor() {
-        System.out.println("Fill GREEN COLOR");
-    }
-}
-class Blue implements Color{
-    @Override
-    public void fillColor() {
-        System.out.println("Fill BLUE COLOR");
+    public void writeCode() {
+        System.out.println("C++ developer writes code...");
     }
 }

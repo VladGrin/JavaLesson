@@ -2,7 +2,7 @@ package javalesson.patterns.structural;
 
 public class Decorator1Lesson {
     public static void main(String[] args) {
-        DeveloperA javaDeveloperA = new SeniorJavaDEveloper(new JavaTeamLead(new JavaDeveloperA()));
+        DeveloperA javaDeveloperA = new SeniorJavaDeveloper(new JavaTeamLead(new JavaDeveloperA()));
         System.out.println(javaDeveloperA.makeJob());
     }
 }
@@ -27,9 +27,9 @@ class DeveloperDecorator implements DeveloperA{
         return developerA.makeJob();
     }
 }
-class SeniorJavaDEveloper extends DeveloperDecorator{
+class SeniorJavaDeveloper extends DeveloperDecorator{
 
-    public SeniorJavaDEveloper(DeveloperA developerA) {
+    public SeniorJavaDeveloper(DeveloperA developerA) {
         super(developerA);
     }
 
