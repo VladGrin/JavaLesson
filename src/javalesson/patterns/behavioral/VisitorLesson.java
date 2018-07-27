@@ -1,4 +1,4 @@
-package javalesson.patterns.structural;
+package javalesson.patterns.behavioral;
 
 public class VisitorLesson {
     public static void main(String[] args) {
