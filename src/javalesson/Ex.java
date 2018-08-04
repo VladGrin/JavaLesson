@@ -1,11 +1,19 @@
 package javalesson;
 
+import java.util.Optional;
+
 public class Ex {
     public static void main(String[] args) {
         CarFactory carFactory = shooceFactory("audi");
         Car car = carFactory.create();
 
         car.transportPeople();
+        String notNumber = null;
+//        Optional<String> optionalS = Optional.of(notNumber);
+//        optionalS.ifPresent(System.out::println);
+        Optional<String> optionalS = Optional.empty();
+        String value = optionalS.orElse("bar");
+        System.out.println(value);
     }
 
     static CarFactory shooceFactory(String string) {
