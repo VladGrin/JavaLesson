@@ -1,8 +1,7 @@
 package javalesson.stepic;
 
 import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
+import java.util.stream.*;
 
 public class StreamQestions {
     public static void main(String[] args) {
@@ -17,5 +16,9 @@ public class StreamQestions {
                 .map(n -> n*n)
                 .sum();
         System.out.println(sum);
+        Stream<Integer> tStream;
+        IntStream intStream;
+        LongStream longStream;
+        DoubleStream doubleStream;
     }
 }
