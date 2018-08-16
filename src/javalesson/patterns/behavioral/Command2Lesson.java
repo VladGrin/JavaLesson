@@ -64,7 +64,6 @@ class UserComp{
     CommandComp start;
     CommandComp stop;
     CommandComp reset;
-
     public UserComp(CommandComp start, CommandComp stop, CommandComp reset) {
         this.start = start;
         this.stop = stop;
