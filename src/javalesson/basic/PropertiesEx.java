@@ -13,6 +13,7 @@ public class PropertiesEx {
 
         Properties properties = new Properties(defaultProperties);
         properties.setProperty("one", "1");
+        properties.setProperty("two", "2");
         System.out.println(properties.getProperty("one"));
 
         FileOutputStream fileOutputStream = new FileOutputStream("my.properties");
