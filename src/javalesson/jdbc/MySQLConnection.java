@@ -28,6 +28,16 @@ public class MySQLConnection {
                 System.out.println(resultSet1.getString("name"));
             }
 
+            int id = 2;
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM books WHERE id = ?;");
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet2 = preparedStatement.executeQuery();
+            while (resultSet2.next()){
+                System.out.println(resultSet2.getInt(1));       //"id"
+                System.out.println(resultSet2.getString(2));   //"name"
+                System.out.println("-------------------------");
+            }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
