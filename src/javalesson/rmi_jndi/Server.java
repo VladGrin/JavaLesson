@@ -1,12 +1,10 @@
-package javalesson.rmi;
+package javalesson.rmi_jndi;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
-import java.awt.*;
 import java.net.MalformedURLException;
 import java.rmi.AlreadyBoundException;
-import java.rmi.Naming;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
@@ -14,8 +12,8 @@ import java.rmi.server.UnicastRemoteObject;
 public class Server {
     public static void main(String[] args) throws NamingException, RemoteException, AlreadyBoundException, MalformedURLException {
         Context context = new InitialContext();
-        context.bind("rmi://localhost:1099/imath", new IMathImpl());
-//        context.bind("rmi:imath", new IMathImpl());  //rebind
+        context.bind("rmi_jndi://localhost:1099/imath", new IMathImpl());
+//        context.bind("rmi_jndi:imath", new IMathImpl());  //rebind
 //        Naming.bind("imath", new IMathImpl());
 
     }
