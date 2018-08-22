@@ -3,7 +3,7 @@ package javalesson.annotation;
 import java.beans.Transient;
 import java.lang.annotation.*;
 
-public class Annotation {
+public class AnnotationStart {
     public static void main(String[] args) {
 
     }
