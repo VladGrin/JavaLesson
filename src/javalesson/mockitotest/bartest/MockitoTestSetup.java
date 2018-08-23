@@ -1,4 +1,4 @@
-package javalesson.mockitotest;
+package javalesson.mockitotest.bartest;
 
 import org.hamcrest.Matcher;
 import org.junit.Before;
@@ -91,7 +91,7 @@ public class MockitoTestSetup {
     public void basicMatchers(){
         Foo foo = mock(Foo.class);                 // given
         Bar bar = new Bar(foo);
-        when(foo.foo(endsWith("we"))).thenReturn("asd");
+//        when(foo.foo(endsWith("we"))).thenReturn("asd");
         when(foo.foo(contains("w"))).thenReturn("asd");
         when(foo.foo(startsWith("qw"))).thenReturn("asd");
         assertEquals("asd", bar.bar("qwe"));           // when, then

@@ -1,4 +1,4 @@
-package javalesson.mockitotest;
+package javalesson.mockitotest.bartest;
 
 public class FooImpl implements Foo{
     @Override

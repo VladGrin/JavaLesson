@@ -1,5 +1,4 @@
-package javalesson.mockitotest;
-
+package javalesson.mockitotest.bartest;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

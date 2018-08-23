@@ -1,4 +1,4 @@
-package javalesson.mockitotest;
+package javalesson.mockitotest.bartest;
 
 public class Bar2 {
     private Foo foo1;
