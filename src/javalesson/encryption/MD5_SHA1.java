@@ -16,7 +16,7 @@ public class MD5_SHA1 {
 
         StringBuilder builder = new StringBuilder();
         for (byte b : bytes) {
-            builder.append(String.format("%02X ", b));
+            builder.append(String.format("%02x ", b));
         }
         System.out.println(builder.toString());
     }

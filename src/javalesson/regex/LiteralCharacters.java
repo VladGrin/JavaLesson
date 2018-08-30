@@ -30,5 +30,15 @@ public class LiteralCharacters {
         }
 
         System.out.println("the the".replaceAll("\\b(\\w+)\\s+\\1\\b", "$1"));
+
+        //  Именованные группы
+        System.out.println("abc".replaceAll("(?<Aletter>a)", "${Aletter}-"));
+        pattern = Pattern.compile("<(?<tag>[A-Z][A-Z0-9]*)[^>]*>.*?</\\k<tag>>");
+        matcher = pattern.matcher("This is a <EM>first</EM> test");
+        while (matcher.find()) {
+            System.out.println(matcher.start() + " " + matcher.group());
+        }
+
+        // Unicode
     }
 }
