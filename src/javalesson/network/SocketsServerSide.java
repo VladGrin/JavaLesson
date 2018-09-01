@@ -17,10 +17,10 @@ public class SocketsServerSide {
             Scanner scanner = new Scanner(socket.getInputStream());
             PrintWriter printWriter = new PrintWriter(socket.getOutputStream(), true);
 //            printWriter.println("HELLO!!!");
-
+            printWriter.println("Server run...");
             while (scanner.hasNextLine()) {
                 String str = scanner.nextLine();
-                printWriter.println("\nYou've send : " + str);
+                printWriter.println("You've send : " + str);
                 System.out.println(str);
                 if (str.equals("exit")) {
                     break;
