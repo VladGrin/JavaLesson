@@ -42,7 +42,7 @@ public class MyServer implements ConnectionEvent {
     }
 
     @Override
-    public synchronized void resieveMessage(Connection connection, String value) {
+    public synchronized void resieveMessage(String value) {
         sendToAllConnections(value);
     }
 
@@ -75,7 +75,7 @@ class Connection {
                 connectionEvent.connectionReady(Connection.this);
                 while (!thread.isInterrupted()) {
                     String message = in.readLine();
-                    connectionEvent.resieveMessage(Connection.this, message);
+                    connectionEvent.resieveMessage( message);
                 }
             } catch (IOException e) {
                 connectionEvent.exception(Connection.this, e);
@@ -114,7 +114,7 @@ class Connection {
 interface ConnectionEvent {
     void connectionReady(Connection connection);
 
-    void resieveMessage(Connection connection, String value);
+    void resieveMessage(String value);
 
     void disconnect(Connection connection);
 
