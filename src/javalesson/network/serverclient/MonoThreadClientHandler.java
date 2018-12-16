@@ -33,7 +33,7 @@ public class MonoThreadClientHandler implements Runnable {
             // начинаем диалог с подключенным клиентом в цикле, пока сокет не
             // закрыт клиентом
             while (!clientDialog.isClosed()) {
-                System.out.println("Server reading from channel");
+                System.out.println("ServerResp reading from channel");
 
                 // серверная нить ждёт в канале чтения (inputstream) получения
                 // данных клиента после получения данных считывает их
@@ -49,7 +49,7 @@ public class MonoThreadClientHandler implements Runnable {
                     // если кодовое слово получено то инициализируется закрытие
                     // серверной нити
                     System.out.println("Client initialize connections suicide ...");
-                    out.writeUTF("Server reply - " + entry + " - OK");
+                    out.writeUTF("ServerResp reply - " + entry + " - OK");
                     Thread.sleep(3000);
                     break;
                 }
@@ -57,9 +57,9 @@ public class MonoThreadClientHandler implements Runnable {
                 // если условие окончания работы не верно - продолжаем работу -
                 // отправляем эхо обратно клиенту
 
-                System.out.println("Server try writing to channel");
-                out.writeUTF("Server reply - " + entry + " - OK");
-                System.out.println("Server Wrote message to clientDialog.");
+                System.out.println("ServerResp try writing to channel");
+                out.writeUTF("ServerResp reply - " + entry + " - OK");
+                System.out.println("ServerResp Wrote message to clientDialog.");
 
                 // освобождаем буфер сетевых сообщений
                 out.flush();

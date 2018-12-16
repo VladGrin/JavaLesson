@@ -35,7 +35,7 @@ public class TestAsServer {
 // начинаем диалог с подключенным клиентом в цикле, пока сокет не закрыт
             while (!client.isClosed()) {
 
-                System.out.println("Server reading from channel");
+                System.out.println("ServerResp reading from channel");
 
 // сервер ждёт в канале чтения (inputstream) получения данных клиента
                 String entry = in.readUTF();
@@ -44,20 +44,20 @@ public class TestAsServer {
                 System.out.println("READ from client message - " + entry);
 
 // и выводит в консоль
-                System.out.println("Server try writing to channel");
+                System.out.println("ServerResp try writing to channel");
 
 // инициализация проверки условия продолжения работы с клиентом по этому сокету по кодовому слову       - quit
                 if (entry.equalsIgnoreCase("quit")) {
                     System.out.println("Client initialize connections suicide ...");
-                    out.writeUTF("Server reply - " + entry + " - OK");
+                    out.writeUTF("ServerResp reply - " + entry + " - OK");
                     out.flush();
                     Thread.sleep(3000);
                     break;
                 }
                 Thread.sleep(2000);
 // если условие окончания работы не верно - продолжаем работу - отправляем эхо-ответ  обратно клиенту
-                out.writeUTF("Server reply - " + entry + " - OK\n");
-                System.out.println("Server Wrote message to client.");
+                out.writeUTF("ServerResp reply - " + entry + " - OK\n");
+                System.out.println("ServerResp Wrote message to client.");
 
 // освобождаем буфер сетевых сообщений (по умолчанию сообщение не сразу отправляется в сеть, а сначала накапливается в специальном буфере сообщений, размер которого определяется конкретными настройками в системе, а метод  - flush() отправляет сообщение не дожидаясь наполнения буфера согласно настройкам системы
                 out.flush();

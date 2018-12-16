@@ -17,7 +17,7 @@ public class SocketsServerSide {
             Scanner scanner = new Scanner(socket.getInputStream());
             PrintWriter printWriter = new PrintWriter(socket.getOutputStream(), true);
 //            printWriter.println("HELLO!!!");
-            printWriter.println("Server run...");
+            printWriter.println("ServerResp run...");
             while (scanner.hasNextLine()) {
                 String str = scanner.nextLine();
                 printWriter.println("You've send : " + str);

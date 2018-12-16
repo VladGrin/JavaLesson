@@ -13,7 +13,7 @@ public class MyServer  {
     }
 
     private MyServer() {
-        System.out.println("Server running...");
+        System.out.println("ServerResp running...");
         try (ServerSocket serverSocket = new ServerSocket(4444)) {
             while (true) {
                 Socket socket = serverSocket.accept();

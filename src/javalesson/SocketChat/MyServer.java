@@ -9,7 +9,7 @@ public class MyServer {
 
     public static void main(String[] args) throws InterruptedException {
 
-        System.out.println("Server running...");
+        System.out.println("ServerResp running...");
 
         try (ServerSocket serverSocket = new ServerSocket(4444);
              Socket socket = serverSocket.accept();
@@ -20,7 +20,7 @@ public class MyServer {
             String message = "";
             while (true){
                 if(in.ready()) {
-                    System.out.println("Server get message");
+                    System.out.println("ServerResp get message");
                     message = in.readLine();
                     System.out.println(message);
 
