@@ -18,19 +18,23 @@ abstract class TypeCar{
     TypeCar(Make make) {
         this.make = make;
     }
-    abstract void showDetails();
+    abstract void showType();
+    void showDetails() {
+        showType();
+        make.create();
+    }
 }
 class Sedan extends TypeCar{
 
-    public Sedan(Make make) {
+    Sedan(Make make) {
         super(make);
     }
 
     @Override
-    void showDetails() {
-        System.out.println("Auto SEDAN");
-        make.create();
+    void showType() {
+        System.out.println("SEDAN");
     }
+
 }
 class HetchBack extends TypeCar{
 
@@ -39,10 +43,10 @@ class HetchBack extends TypeCar{
     }
 
     @Override
-    void showDetails() {
-        System.out.println("Auto HETCHBACK");
-        make.create();
+    void showType() {
+        System.out.println("HETCHBACK");
     }
+
 }
 interface Make{
     void create();
