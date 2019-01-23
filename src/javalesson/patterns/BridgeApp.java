@@ -1,6 +1,6 @@
 package javalesson.patterns;
 
-public class Bridge {
+public class BridgeApp {
     public static void main(String[] args) {
         TypeCar typeCar1 = new Sedan(new Mers());
         TypeCar typeCar2 = new Sedan(new BMW());

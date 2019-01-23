@@ -1,6 +1,6 @@
 package javalesson.patterns;
 
-public class Strategy {
+public class StrategyApp {
     public static void main(String[] args) {
         StrategyClient strategyClient = new StrategyClient();
         strategyClient.setStrategy(new MultiplNumbers());
